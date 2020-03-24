@@ -8,48 +8,85 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 
-<body>
-    <a href="index.html"><img src="images/logo.jpg" alt="logo" width="60px" /> MOBILE ADVERTISING AGENTS</a>
-    <!DOCTYPE html>
-    <html lang="en">
+<body class="body">
+    <header>
+        <!--navigation-->
+        <nav id="navbar">
+            <ul>
+                <a href="index.html" class="logo"><img src="images/logo.jpg" alt="logo" width="60px" /></a>
+                <a href="index.html" class="hide-desktop hide">MOBILE ADVERTISING AGENTS</a>
+                <li><a href="about.html">About</a></li>
+                <li><a href="ads.html">Running Ads</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="tel:08030408674">Contact us</a></li>
 
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>maa.com.ng || Sign In</title>
-        <link rel="stylesheet" href="style.css" />
-    </head>
+            </ul>
 
-    <body>
-        <a href="index.html"><img src="images/logo.jpg" alt="logo" width="60px" /> MOBILE ADVERTISING AGENTS</a>
+
+
+            <div class="button">
+                <button class="cl"><a href="signUp.html">Register</a></button>
+                <button class="cla"><a href="signIn.html">Sign In</a></button>
+
+            </div>
+
+            <!--mobile-menu-btn-->
+            <img src="./images/menu.png" class="hide-desktop main-btn" alt="logo">
+
+
+        </nav>
+        <div class="hide-desktop mobile-nav">
+            <ul>
+                <li><a href="about.html">About</a></li>
+                <li><a href="ads.html">Running Ads</a></li>
+                <li><a href="tel:08030408674">Contact us</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <button class="cl"><a href="signUp.html">Register</a></button> <br>
+                <button class="cla"><a href="signIn.html">Sign In</a></button>
+            </ul>
+        </div>
 
         <div class="container1">
-            <div class="image"></div>
-            <div id="form">
-                <h2 class="headline">
-                    Sign Up
-                </h2>
-                <p class="lead">
-                    Start making money the easy way
+            <div id="hero-header">
+                <h1>Welcome Back</h1>
+                <p>
+                    Make money the easy way, Sign in to your account and get started
                 </p>
-                <form action="" method="GET" class="form">
-                    <input type="text" class="control" name="username" placeholder="name/email" required=""
-                        autofocus="" />
-                    <input type="password" class="control" name="password" placeholder="password" required="" />
-
-                    <button class="button" type="submit">
-                        Sign Up
-                    </button>
-
-                    <p class="acct small">
-                        Already have an account, <a href="index.html">Login /> </a>
-                    </p>
-                </form>
-                <p class="lead space">
-                    By signing up, you agree to our terms <br />and conditions
+                <p class="small hide-mobile">
+                    Learn more about <a href="faq.html"><b>Mobile Advertising Agency</b></a>
                 </p>
             </div>
-        </div>
-    </body>
+            <form action="" method="GET" class="form-signin">
+                <h2 class="form-signin-heading">Account Login</h2>
+                <input type="text" class="form-control" name="username" placeholder="email" required="" autofocus="" />
+                <input type="password" class="form-control" name="password" placeholder="password" required="" />
 
-    </html>
+                <button class="button" type="submit">
+                    <p> Sign In</p>
+                </button>
+
+                <p class="small smaller">
+                    Dont have an account, <a href="signUp.html">Sign Up /> </a>
+                </p>
+            </form>
+        </div>
+    </header>
+    </div>
+    <script>
+        /*var prevScrollpos = window.pageYOffset;
+        window.onscroll = function () {
+          var currentScrollPos = window.pageYOffset;
+          if (prevScrollpos > currentScrollPos) {
+            document.getElementById("navbar").style.top = "0";
+          } else {
+            document.getElementById("navbar").style.top = "-90px";
+          }
+          prevScrollpos = currentScrollPos;
+        }*/
+
+        document.querySelector('.main-btn').addEventListener('click', () => document.querySelector('.mobile-nav')
+            .classList.toggle('show'));
+    </script>
+</body>
+
+</html>
