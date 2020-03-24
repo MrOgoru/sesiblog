@@ -105,6 +105,8 @@ button {
   width: 100%;
   background: linear-gradient(rgba(0, 22, 26, 0.67), rgba(0, 22, 26, 0.67)), url(images/about.png);
   background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   min-height: 479.17px;
   display: flex;
   justify-content: flex-start;
@@ -1056,7 +1058,7 @@ input {
   }
 
   .jumbotron1 h1 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     padding: 0 20px;
     line-height: 46px;
   }
