@@ -1077,4 +1077,8 @@ input {
     margin-bottom: 2rem;
     color: #0a0040;
   }
+  
+  .action a {
+  font-size: 16px;
+}
 }
