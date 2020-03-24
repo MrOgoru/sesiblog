@@ -103,8 +103,7 @@ button {
 
 .carousel {
   width: 100%;
-  background: url("images/slide\ 1.png");
-  background-size: cover;
+  background: linear-gradient(rgba(0, 22, 26, 0.67), rgba(0, 22, 26, 0.67)), url(images/about.png);
   background-position: center;
   min-height: 479.17px;
   display: flex;
