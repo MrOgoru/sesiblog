@@ -11,20 +11,40 @@
 <body>
     <header>
         <!--navigation-->
-        <nav>
+        <nav id="navbar">
             <ul>
                 <a href="index.html" class="logo"><img src="images/logo.jpg" alt="logo" width="60px" /></a>
+                <a href="index.html" class="hide-desktop hide">MOBILE ADVERTISING AGENTS</a>
                 <li><a href="about.html">About</a></li>
                 <li><a href="ads.html">Running Ads</a></li>
-                <li><a href="mailto:sesi@actolog.com">Contact us</a></li>
                 <li><a href="faq.html">FAQ</a></li>
+                <li><a href="tel:08030408674">Contact us</a></li>
+
             </ul>
+
+
 
             <div class="button">
                 <button class="cl"><a href="signUp.html">Register</a></button>
                 <button class="cla"><a href="signIn.html">Sign In</a></button>
+
             </div>
+
+            <!--mobile-menu-btn-->
+            <img src="./images/menu.png" class="hide-desktop main-btn" alt="logo">
+
+
         </nav>
+        <div class="hide-desktop mobile-nav">
+            <ul>
+                <li><a href="about.html">About</a></li>
+                <li><a href="ads.html">Running Ads</a></li>
+                <li><a href="tel:08030408674">Contact us</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <button class="cl"><a href="signUp.html">Register</a></button> <br>
+                <button class="cla"><a href="signIn.html">Sign In</a></button>
+            </ul>
+        </div>
         <div class="jumbotron2">
             <h1>Running Ads </h1>
         </div>
@@ -35,9 +55,8 @@
             <h3>
                 Running Ads
             </h3>
-            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Enim tristique lorem pulvinar cursus augue
-                dictum quis massa. Dui pharetra morbi arcu lorem sed cursus tellus non interdum. Mauris facilisi
-                hendrerit sagittis, in eget rhoncus, enim, </p>
+            <p> You can download a minimum of 5 ads. One of them must be a non-paid ad at least in every transaction.
+                You must have an account to get started. Sign Up <a href="signUp.html"><b> here</b></a></p>
         </div>
         <div class="ads runnning-ads">
             <!--running-ads-->
@@ -62,6 +81,23 @@
                 <img src="images/Rectangle 11.png" alt="advert" />
 
             </div>
+
+            <div class="d-basic">
+                <div class="basic">
+
+                    <h4>Basic Requirements for <br>downloading an Ad</h4>
+                    <ol>
+                        <li>A smart phone with a WhatsApp account and screenshot function </li>
+                        <li> A minimum of 50 contacts also with active whatsapp account </li>
+                        <li>A business, service, products or skill you want people to know.(optional) </li>
+                        <li> A bank account. </li>
+                    </ol>
+                    <div class="div vv"><a href="signUp.html">Get Started</a> </div>
+                </div>
+            </div>
+
+
+        </div>
         </div>
         </div>
     </main>
@@ -75,9 +111,9 @@
             <ul>
                 <li><a href="about.html">About</a></li>
                 <li><a href="ads.html">Running Ads</a></li>
-                <li><a href="contact.html">Contact us</a></li>
                 <li><a href="faq.html">FAQ</a></li>
-                <li><a href="learn.html">Learn</a></li>
+                <li><a href="tel:08030408674">Contact us</a></li>
+
             </ul>
         </div>
 
@@ -87,6 +123,21 @@
             <small>Call us: 0809 522 1113 0814 742 8084</small>
         </div>
     </footer>
+    <script>
+        /*var prevScrollpos = window.pageYOffset;
+        window.onscroll = function () {
+          var currentScrollPos = window.pageYOffset;
+          if (prevScrollpos > currentScrollPos) {
+            document.getElementById("navbar").style.top = "0";
+          } else {
+            document.getElementById("navbar").style.top = "-90px";
+          }
+          prevScrollpos = currentScrollPos;
+        }*/
+
+        document.querySelector('.main-btn').addEventListener('click', () => document.querySelector('.mobile-nav')
+            .classList.toggle('show'));
+    </script>
 </body>
 
 </html>
