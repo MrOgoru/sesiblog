@@ -99,6 +99,12 @@ button {
   font-weight: 600;
 }
 
+.cla a:hover {
+  opacity: 0.9;
+  color: #fff;
+}
+
+
 /* jumbotron */
 
 .carousel {
@@ -144,7 +150,7 @@ button {
   max-width: 607px;
   line-height: 25px;
   margin-top: 30px;
-  text-align: justify;
+  text-align: left;
 }
 
 /*---how it works ----*/
@@ -350,7 +356,7 @@ button {
 }
 
 .testimony p {
-  font-size: 1.1111rem;
+  font-size: 0.9rem;
   line-height: 29px;
   text-align: justify;
   max-width: 487px;
@@ -674,8 +680,8 @@ h3 {
 
 /*--faq--*/
 .jumbotron3 {
-  background: linear-gradient(rgba(255, 255, 255, 0.09),
-      rgba(255, 255, 255, 0.09)),
+  background: linear-gradient(rgba(0, 0, 0, 0.09),
+      rgba(0, 0, 0, 0.274)),
     url("images/faq.jpg");
   background-size: cover;
   background-position: center;
@@ -692,10 +698,7 @@ h3 {
   padding-top: 216px;
 }
 
-.grid-accord {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
+.grid-accord {}
 
 .accordion {
   width: 100%;
@@ -719,6 +722,8 @@ h3 {
 
 .accordion-content p {
   margin: 0 0 20px 0;
+  max-width: 800px;
+  font-size: 1rem;
 }
 
 .accordion-content {
@@ -1079,8 +1084,8 @@ input {
     margin-bottom: 2rem;
     color: #0a0040;
   }
-  
+
   .action a {
-  font-size: 16px;
-}
+    font-size: 16px;
+  }
 }
