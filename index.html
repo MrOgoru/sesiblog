@@ -46,10 +46,47 @@
       </ul>
     </div>
 
-    <div class="carousel">
-      <!--Carousel-->
+     <!-- <div class="carousel">
+      <!--Carousel
       <h1>Connect and Get Paid <br />Advertising on WhatsApp</h1>
+    </div>-->
+
+    <!--slider-->
+    <div class="slider">
+      <div class="slide current">
+        <div class="content content1">
+          <h1>Connect and Get Paid <br />Advertising on WhatsApp</h1>
+        
+        </div>
+      </div>
+      <div class="slide">
+        <div class="content content2">
+          <h1>Fast, Easy and Secure Payments</h1>
+          <p>Follow our four easy steps to earn 
+            money anywhere you are</p>
+            <button class="butons">
+              <a href="#how">Learn more</a>
+            </button>
+        </div>
+      </div>
+      <div class="slide">
+        <div class=" content3">
+          <h1>Make Money The Easy Way </h1>
+          <p>Download any of ad to get started</p>
+            <button class="butons">
+              <a href="#how">Get Started</a>
+            </button>
+         
+        </div>
+      </div>
+   
     </div>
+    <div class="buttons">
+      <div id="prev"></div>
+      <div id="next"></div>
+    </div>
+
+
   </header>
 
   <!--main-->
@@ -197,6 +234,67 @@
 
     document.querySelector('.main-btn').addEventListener('click', () => document.querySelector('.mobile-nav')
       .classList.toggle('show'));
+
+    const slides = document.querySelectorAll('.slide');
+    const next = document.querySelector('#next');
+    const prev = document.querySelector('#prev');
+    const auto = true;
+    const intervalTime = 7000;
+    let slideInterval;
+
+    const nextSlide = () => {
+      //Get Current Slides
+      const current = document.querySelector('.current');
+      //remove current class
+      current.classList.remove('.current');
+      //check for next sslide
+      if (current.nextElementSibling) {
+        //Add current to next sibling
+        current.nextElementSibling.classList.add('current');
+      } else {
+        //add current to start
+        slides[0].classList.add('current')
+      }
+      setTimeout(() => current.classList.remove('current'));
+    }
+
+
+    const prevSlide = () => {
+      //Get Current Slide
+      const current = document.querySelector('.current');
+      //remove current class
+      current.classList.remove('.current');
+      //check for prev sslide
+      if (current.previousElementSibling) {
+        //Add current to next sibling
+        current.previousElementSibling.classList.add('current');
+      } else {
+        //add current to last
+        slides[slides.length - 1].classList.add('current')
+      }
+      setTimeout(() => current.classList.remove('current'));
+    }
+    //buttton events
+    next.addEventListener('click', e => {
+      nextSlide();
+      if (auto) {
+        clearInterval(slideInterval);
+        slideInterval = setInterval(nextSlide, intervalTime);
+      }
+    });
+    prev.addEventListener('click', e => {
+      prevSlide();
+      if (auto) {
+        clearInterval(slideInterval);
+        slideInterval = setInterval(nextSlide, intervalTime);
+      }
+    });
+
+    //auto slide
+    if (auto) {
+      //rum next slide at interval time
+      slideInterval = setInterval(nextSlide, intervalTime);
+    }
   </script>
 </body>
 

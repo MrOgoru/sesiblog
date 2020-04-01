@@ -18,6 +18,14 @@ a {
   color: #000000;
 }
 
+button {
+  cursor: pointer;
+}
+
+header {
+  position: relative;
+  overflow: hidden;
+}
 #navbar {
   background-color: #fff;
   display: flex;
@@ -104,26 +112,149 @@ button {
   color: #fff;
 }
 
-
-/* jumbotron */
-
-.carousel {
-  width: 100%;
-  background: linear-gradient(rgba(0, 22, 26, 0.67), rgba(0, 22, 26, 0.67)), url(images/about.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  min-height: 479.17px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+/* slider */
+.slider {
+  position: relative;
+  overflow: hidden;
+  height: 500px;
 }
 
-.carousel h1 {
-  font-weight: 500;
-  font-size: 3rem;
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 500px;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.slide.current {
+  opacity: 1;
   color: #fff;
-  margin-left: 50px;
+}
+
+.content1 h1 {
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+.content2 {
+  position: absolute;
+  left: 160px;
+}
+
+.content2 h1 {
+  font-size: 2.625rem;
+  color: #000;
+  font-weight: 550;
+  margin-bottom: 21px;
+}
+
+.content2 p {
+  font-size: 1.5rem;
+  color: #000;
+}
+
+.butons {
+  width: 257px;
+  height: 47px;
+  margin-left: 0;
+  margin-top: 25px;
+  border: none;
+  outline: none;
+
+  background: #0a0040;
+  border-radius: 5px;
+}
+
+.butons a {
+  font-size: 1.2rem;
+  color: #fff;
+  letter-spacing: 0.03em;
+}
+
+.slide .content3 {
+  position: absolute;
+  top: 30%;
+  right: 10%;
+  color: #000;
+}
+
+.content3 h1 {
+  font-weight: 550;
+  margin-bottom: 21px;
+  font-size: 3rem;
+}
+
+.content3 p {
+  font-size: 1.5rem;
+  width: 100%;
+  max-width: 600px;
+}
+
+/*buuttons */
+.buttons {
+  display: flex;
+  cursor: pointer;
+  align-items: baseline;
+  justify-content: center;
+}
+
+.buttons #prev {
+  position: absolute;
+  bottom: 50px;
+  width: 10px;
+  height: 10px;
+  background-color: transparent;
+  z-index: 1;
+  left: 46%;
+  border-radius: 50%;
+  border: 1px solid #fafafa8a;
+}
+
+.buttons #next {
+  position: absolute;
+  bottom: 50px;
+  left: 49%;
+  width: 10px;
+  height: 10px;
+  background-color: transparent;
+  z-index: 1;
+  border-radius: 50%;
+  border: 1px solid #fafafa8a;
+}
+.buttons #next:hover,
+.buttons #prev:hover {
+  background-color: #b4b4b4;
+  width: 13px;
+  height: 13px;
+  border: none;
+}
+
+/*Background Images */
+.slide:first-child {
+  background: linear-gradient(rgba(0, 22, 26, 0.67), rgba(0, 22, 26, 0.67)),
+    url(images/about.png) no-repeat center center/cover;
+}
+
+.slide:nth-child(2) {
+  background: url(./images/slider2.png) no-repeat center right/cover;
+}
+
+.slide:nth-child(3) {
+  background: linear-gradient(
+      268.38deg,
+      #e9dbda 1.6%,
+      rgba(196, 196, 196, 0) 65.28%
+    ),
+    url(./images/slider.png) no-repeat center left/cover;
+}
+
+.slide .content {
+  position: absolute;
+  top: 30%;
+  right: 30%;
 }
 
 /*----main-----*/
@@ -491,10 +622,9 @@ small:hover {
 /*---about---*/
 
 .jumbotron1 {
-  background: linear-gradient(rgba(0, 22, 26, 0.67), rgba(0, 22, 26, 0.67)),
-    url("images/about.png");
+  background: url("images/slide\ 1.png");
   background-size: cover;
-  background-position: center;
+  background-position: right;
   min-height: 479.17px;
 }
 
@@ -636,10 +766,9 @@ h3 {
 
 .header p {
   text-align: center;
-  max-width: 595px;
+  max-width: 650px;
   margin: 30px auto;
 }
-
 
 .basic {
   width: 100%;
@@ -662,7 +791,6 @@ h3 {
   list-style: none;
   font-size: 1.1rem;
   line-height: 39px;
-
 }
 
 .vv a {
@@ -675,13 +803,11 @@ h3 {
 
 .vv a:hover {
   opacity: 0.9;
-
 }
 
 /*--faq--*/
 .jumbotron3 {
-  background: linear-gradient(rgba(0, 0, 0, 0.09),
-      rgba(0, 0, 0, 0.274)),
+  background: linear-gradient(rgba(0, 0, 0, 0.09), rgba(0, 0, 0, 0.274)),
     url("images/faq.jpg");
   background-size: cover;
   background-position: center;
@@ -698,7 +824,8 @@ h3 {
   padding-top: 216px;
 }
 
-.grid-accord {}
+.grid-accord {
+}
 
 .accordion {
   width: 100%;
@@ -761,12 +888,6 @@ header {
   justify-content: space-around;
   align-items: center;
   color: #fff;
-}
-
-h1 {
-  font-size: 3rem;
-  font-weight: 500;
-  margin-bottom: 40px;
 }
 
 p {
@@ -837,6 +958,27 @@ input {
 @media (max-width: 830px) {
   .hide-desktop {
     display: block;
+  }
+
+  .buttons #prev {
+    left: 42%;
+    height: 15px;
+    width: 15px;
+  }
+
+  .buttons #next {
+    left: 50%;
+    height: 15px;
+    width: 15px;
+  }
+
+  div.content.content1 {
+    margin-left: 40px;
+  }
+
+  div.content.content1 h1 {
+    margin-left: 30px;
+    font-size: 2.3rem;
   }
 
   .jumbotron1 h1 {
@@ -929,11 +1071,6 @@ input {
     display: none;
   }
 
-  h1 {
-    font-size: 2.2rem;
-    text-align: center;
-  }
-
   #hero-header p {
     text-align: center;
     padding: 0 10px;
@@ -966,7 +1103,6 @@ input {
 }
 
 @media (max-width: 700px) {
-
   .download,
   .share,
   .sreenshot,
@@ -974,11 +1110,17 @@ input {
     flex-direction: column;
   }
 
-  .carousel h1 {
-    position: absolute;
-    top: 100;
-    left: 50;
-    font-size: 2.5rem;
+  div.content.content2 {
+    top: 30%;
+    left: 50px;
+  }
+  .content2 h1 {
+    font-size: 2rem;
+    font-weight: 500;
+  }
+
+  .content .button {
+    left: 50px;
   }
 
   .testimony {
@@ -1010,21 +1152,26 @@ input {
   .contact {
     padding: 0 20px;
   }
+
+  .slide .content3 {
+    left: 30px;
+  }
 }
 
 @media (max-width: 500px) {
-
   #navbar {
     padding: 0 30px;
-
   }
 
-  .carousel h1 {
-    font-size: 1.6rem;
+  div.content.content1 {
+    margin-left: 40px;
+  }
+
+  div.content.content1 h1 {
+    width: 100%;
+    margin-left: 30px;
+    font-size: 1.8rem;
     text-align: center;
-    margin-left: 10px;
-    font-size: 1.9rem;
-    padding: 5px;
   }
 
   .footer1 li {
@@ -1074,7 +1221,6 @@ input {
   }
 
   .basic {
-
     margin: 40px auto;
     padding: 0px 35px;
   }
@@ -1087,5 +1233,51 @@ input {
 
   .action a {
     font-size: 16px;
+  }
+
+  div.content.content2 {
+    width: 300px;
+    top: 42%;
+    left: 20px;
+  }
+  .content2 h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0;
+  }
+  .content2 p {
+    font-size: 1rem;
+    display: none;
+  }
+
+  div.content.content2 .button {
+    width: 207px;
+    height: 40px;
+    margin-left: 0;
+  }
+
+  .slide .content3 {
+    left: 30px;
+  }
+
+  div.content.content3 {
+    width: 300px;
+    top: 42%;
+    left: 20%;
+  }
+  .content3 h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0;
+  }
+  .content3 p {
+    font-size: 1rem;
+    display: none;
+  }
+
+  div.content.content3 .buttons {
+    width: 207px;
+    height: 40px;
+    margin-left: 0;
   }
 }
